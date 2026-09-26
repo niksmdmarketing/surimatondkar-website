@@ -2,7 +2,7 @@
    Palette: bright & playful, anchored by a deep ink-plum for text. */
 
 :root {
-  --bg: #f5efff;          /* pale lilac paper */
+  --bg: #ede3ff;          /* lilac paper */
   --ink: #2a1747;         /* deep plum ink */
   --ink-soft: #4b3a6b;
   --pink: #ff3d8b;
@@ -29,12 +29,16 @@ body {
   background-color: var(--bg);
   /* faint confetti scattered across the page */
   background-image:
+    radial-gradient(ellipse 70% 55% at 0% 0%, rgba(139, 61, 255, .28), transparent 70%),
+    radial-gradient(ellipse 60% 50% at 100% 35%, rgba(176, 108, 255, .24), transparent 70%),
+    radial-gradient(ellipse 80% 55% at 20% 100%, rgba(120, 50, 230, .22), transparent 70%),
     radial-gradient(circle at 12% 18%, rgba(255, 61, 139, .10) 0 6px, transparent 7px),
     radial-gradient(circle at 78% 9%, rgba(47, 91, 255, .10) 0 5px, transparent 6px),
     radial-gradient(circle at 88% 42%, rgba(255, 198, 26, .18) 0 7px, transparent 8px),
     radial-gradient(circle at 6% 64%, rgba(19, 181, 164, .12) 0 5px, transparent 6px),
-    radial-gradient(circle at 52% 88%, rgba(139, 61, 255, .10) 0 6px, transparent 7px);
-  background-size: 520px 520px;
+    radial-gradient(circle at 52% 88%, rgba(139, 61, 255, .16) 0 6px, transparent 7px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 520px 520px, 520px 520px, 520px 520px, 520px 520px, 520px 520px;
+  min-height: 100vh;
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 1.2rem;
@@ -97,11 +101,11 @@ img { max-width: 100%; height: auto; display: block; }
 .logo-name {
   margin: 0;
   font-family: var(--font-display);
-  font-weight: 900;
+  font-weight: 600;
   font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144;
   font-size: clamp(2.8rem, 11vw, 7.4rem);
   line-height: .95;
-  letter-spacing: .01em;
+  letter-spacing: .03em;
   color: var(--ink);
   display: flex;
   flex-wrap: wrap;
@@ -114,9 +118,7 @@ img { max-width: 100%; height: auto; display: block; }
 .logo-name .l {
   display: inline-block;
   transform: translateY(var(--y, 0)) rotate(var(--r, 0deg));
-  text-shadow:
-    .05em .05em 0 var(--c, var(--pink)),
-    .09em .09em 0 var(--ink);
+  text-shadow: .045em .045em 0 var(--c, var(--pink));
   transition: transform .25s cubic-bezier(.3, 1.6, .5, 1);
 }
 .logo:hover .l { transform: translateY(calc(var(--y, 0) - .06em)) rotate(calc(var(--r, 0deg) * -1)); }
