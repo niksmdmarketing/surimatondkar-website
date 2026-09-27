@@ -102,14 +102,16 @@ img { max-width: 100%; height: auto; display: block; }
   font-family: var(--font-display);
   font-weight: 600;
   font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144;
-  font-size: clamp(2.8rem, 11vw, 7.4rem);
-  line-height: .95;
+  /* one line: sized so the full name spans ~90% of the space available */
+  font-size: min(8.4vw, 6.4rem);
+  line-height: 1;
   letter-spacing: .03em;
   color: var(--ink);
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
-  column-gap: .3em;
+  column-gap: .28em;
+  white-space: nowrap;
 }
 
 .logo-word { display: inline-flex; white-space: nowrap; }
@@ -123,11 +125,25 @@ img { max-width: 100%; height: auto; display: block; }
 .logo:hover .l { transform: translateY(calc(var(--y, 0) - .06em)) rotate(calc(var(--r, 0deg) * -1)); }
 
 /* per-letter colour + wobble, like leaves that landed slightly askew */
-.l:nth-child(5n+1) { --c: var(--pumpkin); --r: -4deg; --y: .02em; }
-.l:nth-child(5n+2) { --c: var(--mustard); --r: 3deg;  --y: -.03em; }
-.l:nth-child(5n+3) { --c: var(--moss);    --r: -2deg; --y: .03em; }
-.l:nth-child(5n+4) { --c: var(--berry);   --r: 4deg;  --y: -.01em; }
-.l:nth-child(5n+5) { --c: var(--rust);    --r: -3deg; --y: .02em; }
+/* per-letter colour + a gentle wobble — the baseline stays mostly level */
+.l:nth-child(5n+1) { --c: var(--pumpkin); --r: -2deg;   --y: .01em; }
+.l:nth-child(5n+2) { --c: var(--mustard); --r: 1.5deg;  --y: -.01em; }
+.l:nth-child(5n+3) { --c: var(--moss);    --r: -1deg;   --y: .015em; }
+.l:nth-child(5n+4) { --c: var(--berry);   --r: 2deg;    --y: -.005em; }
+.l:nth-child(5n+5) { --c: var(--rust);    --r: -1.5deg; --y: .01em; }
+
+/* the fox curled up inside the O */
+.l-o { position: relative; }
+.o-fox {
+  position: absolute;
+  left: 50%; top: 54%;
+  width: .44em;
+  transform: translate(-50%, -50%) rotate(-6deg);
+  transform-origin: 50% 80%;
+  overflow: visible;
+  transition: transform .35s cubic-bezier(.3, 1.8, .5, 1);
+}
+.logo:hover .o-fox { transform: translate(-50%, -58%) rotate(8deg) scale(1.08); }
 
 .logo-tag {
   display: inline-block;
@@ -153,11 +169,10 @@ img { max-width: 100%; height: auto; display: block; }
 .d-a     { width: 44px; top: 6%;  left: 1%;  color: var(--pumpkin); animation: sway 4.2s ease-in-out infinite; }
 .d-b     { width: 26px; top: 42%; left: -2%; color: var(--moss);    animation: sway 3.4s ease-in-out infinite .6s; }
 .d-c     { width: 40px; bottom: 14%; right: -1%; color: var(--mustard); animation: sway 4.6s ease-in-out infinite .3s; }
-.d-d     { width: 24px; top: 4%;  right: 11%; color: var(--berry);  animation: sway 3.8s ease-in-out infinite 1s; }
-.d-swirl { width: 90px; top: -4%; right: 17%; color: var(--rust); }
+.d-d     { width: 24px; top: -4%; right: 2%; color: var(--berry);  animation: sway 3.8s ease-in-out infinite 1s; }
+.d-swirl { width: 90px; top: -16%; right: 8%; color: var(--rust); }
 .d-lines { width: 56px; bottom: 28%; left: -3%; color: var(--chestnut); }
 .d-acorn { width: 34px; bottom: 4%; right: 9%; animation: sway 5s ease-in-out infinite .2s; }
-.d-fox   { width: 58px; bottom: 0; left: 8%; }
 
 @keyframes sway {
   0%, 100% { transform: rotate(-10deg) translateY(0); }
@@ -171,11 +186,10 @@ img { max-width: 100%; height: auto; display: block; }
 /* compact logo on inner pages */
 .site-header.compact { padding-bottom: 0; }
 .site-header.compact .logo { padding: .5rem 1.5rem 1rem; }
-.site-header.compact .logo-name { font-size: clamp(2.2rem, 7vw, 4.2rem); }
+.site-header.compact .logo-name { font-size: min(6.6vw, 3.8rem); }
 .site-header.compact .d-swirl,
 .site-header.compact .d-lines,
 .site-header.compact .d-acorn,
-.site-header.compact .d-fox,
 .site-header.compact .d-a,
 .site-header.compact .d-c,
 .site-header.compact .d-d { display: none; }
@@ -538,8 +552,11 @@ img { max-width: 100%; height: auto; display: block; }
   .portrait { max-width: 300px; }
   .bars li { width: 100%; }
   .bar-label { box-shadow: 5px 5px 0 var(--ink); border-width: 3px; }
-  .logo { padding: 1.25rem 1rem 1.5rem; }
-  .d-swirl { width: 60px; right: 4%; }
-  .d-lines, .d-b { display: none; }
-  .d-fox { width: 44px; left: 2%; }
+  .logo { padding: 1.25rem .25rem 1.5rem; }
+  .logo-name { font-size: 9.6vw; letter-spacing: 0; column-gap: .22em; }
+  .logo-tag { margin-top: .75rem; }
+  .d-swirl { width: 54px; top: -6%; right: 4%; }
+  .d-a { width: 30px; top: -4%; left: 2%; }
+  .d-c { width: 28px; bottom: 2%; right: 6%; }
+  .d-lines, .d-b, .d-d, .d-acorn { display: none; }
 }
