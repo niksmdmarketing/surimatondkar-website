@@ -7,9 +7,9 @@ Author website for Suri Matondkar. Plain HTML + CSS, no build step, hosted on Gi
 | File | What it is |
 | --- | --- |
 | `index.html` | Home: logo, photo + intro, and the four navigation bars |
-| `about.html` | About + publications |
+| `about.html` | About |
 | `awards.html` | Awards and shortlists |
-| `interests.html` | Interests (placeholder for now) |
+| `work.html` | Work: publications |
 | `contact.html` | Email + LinkedIn |
 | `styles.css` | All styling — colours are at the top under `:root` |
 | `images/` | Photos |
