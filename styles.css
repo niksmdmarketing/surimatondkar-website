@@ -128,17 +128,6 @@ img { max-width: 100%; height: auto; display: block; }
 .l:nth-child(5n+4) { --c: var(--berry);   --r: .8deg; }
 .l:nth-child(5n+5) { --c: var(--rust);    --r: -.6deg; }
 
-/* a little smiley face inside the O */
-.l-o { position: relative; }
-.o-smile {
-  position: absolute;
-  left: 50%; top: 52%;
-  width: .3em;
-  transform: translate(-50%, -50%);
-  overflow: visible;
-  transition: transform .35s cubic-bezier(.3, 1.8, .5, 1);
-}
-.logo:hover .o-smile { transform: translate(-50%, -50%) rotate(-10deg) scale(1.1); }
 
 .logo-tag {
   display: inline-block;
@@ -164,6 +153,7 @@ img { max-width: 100%; height: auto; display: block; }
 .d-a    { width: 44px; top: 4%;  left: 2%;  color: var(--pumpkin); animation: sway 4.2s ease-in-out infinite; }
 .d-b    { width: 26px; top: 40%; left: -1%; color: var(--moss);    animation: sway 3.4s ease-in-out infinite .6s; }
 .d-c    { width: 30px; top: 10%; left: 22%; color: var(--mustard); animation: sway 4.6s ease-in-out infinite .3s; }
+.d-fox  { width: 60px; top: 0; left: 1%; animation: none; transform: rotate(-10deg); }
 .d-pen  { width: 170px; top: 0; right: 4%; }
 .d-book { width: 84px; bottom: 6%; left: -3%; transform: rotate(-8deg); }
 
@@ -340,42 +330,38 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .bar:hover .bar-arrow, .bar:focus-visible .bar-arrow { transform: translateX(6px); }
 
-/* 01 About — pumpkin with drifting maple leaves */
+/* 01 About — open books and quotation marks */
 .bar-about {
   --bar-bg: var(--pumpkin);
-  --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='110' viewBox='0 0 120 110'%3E%3Cpath transform='translate(10 10) rotate(-20 12 12) scale(1.3)' fill='%23f3b73a' d='M12 1l1.6 4.6 3.2-1.6-.8 4.6 4.4-1-2 3.8 4.2 1.6-4.6 1.8.8 2.8-4.4-1.2-1.6 1V23h-1.6v-5.6l-1.6-1-4.4 1.2.8-2.8-4.6-1.8 4.2-1.6-2-3.8 4.4 1-.8-4.6 3.2 1.6z'/%3E%3Cpath transform='translate(70 56) rotate(30 12 12)' fill='%23b3361c' d='M12 1l1.6 4.6 3.2-1.6-.8 4.6 4.4-1-2 3.8 4.2 1.6-4.6 1.8.8 2.8-4.4-1.2-1.6 1V23h-1.6v-5.6l-1.6-1-4.4 1.2.8-2.8-4.6-1.8 4.2-1.6-2-3.8 4.4 1-.8-4.6 3.2 1.6z'/%3E%3Ccircle cx='96' cy='22' r='3.5' fill='%23fff4e2'/%3E%3Ccircle cx='30' cy='86' r='2.5' fill='%23fff4e2'/%3E%3C/svg%3E");
-  --pattern-size: 216px 198px;
+  --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='104' viewBox='0 0 220 104'%3E%3Cg transform='translate(14 14) rotate(-10) scale(2.3)' stroke='%233a1430' stroke-width='1.4' stroke-linejoin='round'%3E%3Cpath fill='%23fff4e2' d='M12 3C9 1 5 1 1 2v11c4-1 8-1 11 1z'/%3E%3Cpath fill='%23fff4e2' d='M12 3c3-2 7-2 11-1v11c-4-1-8-1-11 1z'/%3E%3Cpath fill='none' stroke-opacity='.45' stroke-width='.9' d='M4 5c2-.5 4-.4 6 .3M4 8c2-.5 4-.4 6 .3M14 5.3c2-.7 4-.8 6-.3M14 8.3c2-.7 4-.8 6-.3'/%3E%3C/g%3E%3Cg transform='translate(140 58) scale(1.5)' fill='%23f3b73a'%3E%3Cpath d='M6 14c-3 0-5-2-5-5 0-4 3-7 7-8l1 2c-2 1-4 3-4 5 3 0 5 1 5 3s-2 3-4 3z'/%3E%3Cpath d='M17 14c-3 0-5-2-5-5 0-4 3-7 7-8l1 2c-2 1-4 3-4 5 3 0 5 1 5 3s-2 3-4 3z'/%3E%3C/g%3E%3Ccircle cx='170' cy='20' r='3.5' fill='%23fff4e2'/%3E%3Ccircle cx='60' cy='86' r='2.5' fill='%23f3b73a'/%3E%3C/svg%3E");
+  --pattern-size: 220px 104px;
   --num-bg: var(--pumpkin);
   --tilt: -2deg;
 }
 
-/* 02 Awards — mustard with acorns and a little sparkle */
+/* 02 Awards — little stacks of books with ribbon bookmarks */
 .bar-awards {
   --bar-bg: var(--mustard);
-  --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg transform='translate(12 14) rotate(-15 12 12)'%3E%3Cpath d='M12 3V0.5' stroke='%237a3e1d' stroke-width='2.2' stroke-linecap='round'/%3E%3Cpath fill='%23c8741d' d='M5 10h14c0 7-3 12-7 13.5C8 22 5 17 5 10z'/%3E%3Cpath fill='%237a3e1d' d='M3 10c0-4.5 4-7 9-7s9 2.5 9 7z'/%3E%3C/g%3E%3Cg transform='translate(62 58) rotate(20 12 12) scale(.85)'%3E%3Cpath d='M12 3V0.5' stroke='%237a3e1d' stroke-width='2.2' stroke-linecap='round'/%3E%3Cpath fill='%23c8741d' d='M5 10h14c0 7-3 12-7 13.5C8 22 5 17 5 10z'/%3E%3Cpath fill='%237a3e1d' d='M3 10c0-4.5 4-7 9-7s9 2.5 9 7z'/%3E%3C/g%3E%3Cpath transform='translate(70 12)' fill='%23fff4e2' d='M8 0c.5 4 3.5 7.5 8 8-4.5.5-7.5 4-8 8-.5-4-3.5-7.5-8-8 4.5-.5 7.5-4 8-8z'/%3E%3Ccircle cx='24' cy='76' r='3' fill='%239e1d57'/%3E%3C/svg%3E");
-  --pattern-size: 170px 170px;
+  --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='110' viewBox='0 0 220 110'%3E%3Cg transform='translate(14 6) rotate(-6) scale(1.7)' stroke='%233a1430' stroke-width='1.5'%3E%3Crect x='2' y='18' width='26' height='6' rx='1.5' fill='%23b3361c'/%3E%3Crect x='5' y='12' width='22' height='6' rx='1.5' fill='%235b7a2c'/%3E%3Crect x='3' y='6' width='24' height='6' rx='1.5' fill='%239e1d57'/%3E%3Cpath d='M8 18v6M22 12v6M9 6v6' stroke='%23fff4e2' stroke-width='1.5'/%3E%3Cpath d='M20 6v-5l2 1.6 2-1.6v5' fill='%23fff4e2' stroke-width='1.1'/%3E%3C/g%3E%3Cg transform='translate(126 52) rotate(8) scale(1.45)' stroke='%233a1430' stroke-width='1.5'%3E%3Crect x='2' y='18' width='26' height='6' rx='1.5' fill='%23b3361c'/%3E%3Crect x='5' y='12' width='22' height='6' rx='1.5' fill='%235b7a2c'/%3E%3Crect x='3' y='6' width='24' height='6' rx='1.5' fill='%239e1d57'/%3E%3Cpath d='M8 18v6M22 12v6M9 6v6' stroke='%23fff4e2' stroke-width='1.5'/%3E%3Cpath d='M20 6v-5l2 1.6 2-1.6v5' fill='%23fff4e2' stroke-width='1.1'/%3E%3C/g%3E%3Cpath transform='translate(146 10) scale(1.2)' fill='%23fff4e2' d='M8 0c.5 4 3.5 7.5 8 8-4.5.5-7.5 4-8 8-.5-4-3.5-7.5-8-8 4.5-.5 7.5-4 8-8z'/%3E%3Cpath transform='translate(40 74) scale(0.9)' fill='%23fff4e2' d='M8 0c.5 4 3.5 7.5 8 8-4.5.5-7.5 4-8 8-.5-4-3.5-7.5-8-8 4.5-.5 7.5-4 8-8z'/%3E%3Ccircle cx='100' cy='40' r='3' fill='%239e1d57'/%3E%3C/svg%3E");
+  --pattern-size: 220px 110px;
   --num-bg: var(--chestnut);
   --tilt: 2deg;
 }
 
-/* 03 Interests — moss flannel plaid */
+/* 03 Interests — a full bookshelf */
 .bar-interests {
   --bar-bg: var(--moss);
-  --pattern:
-    repeating-linear-gradient(90deg, transparent 0 22px, rgba(255, 244, 226, .45) 22px 25px, transparent 25px 56px, rgba(58, 20, 48, .30) 56px 74px),
-    repeating-linear-gradient(0deg,  transparent 0 22px, rgba(255, 244, 226, .45) 22px 25px, transparent 25px 56px, rgba(58, 20, 48, .30) 56px 74px),
-    repeating-linear-gradient(90deg, rgba(179, 54, 28, .45) 0 12px, transparent 12px 74px),
-    repeating-linear-gradient(0deg,  rgba(179, 54, 28, .45) 0 12px, transparent 12px 74px);
-  --pattern-size: auto;
+  --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='96' viewBox='0 0 260 96'%3E%3Crect x='1' y='30' width='20' height='58' rx='2' fill='%23b3361c' stroke='%233a1430' stroke-width='2'/%3E%3Cpath d='M4 38h14M4 80h14' stroke='%23fff4e2' stroke-width='2' opacity='.8'/%3E%3Crect x='25' y='44' width='14' height='44' rx='2' fill='%23e8a61c' stroke='%233a1430' stroke-width='2'/%3E%3Cpath d='M28 52h8M28 80h8' stroke='%23fff4e2' stroke-width='2' opacity='.8'/%3E%3Crect x='43' y='24' width='24' height='64' rx='2' fill='%23fff4e2' stroke='%233a1430' stroke-width='2'/%3E%3Cpath d='M46 32h18M46 80h18' stroke='%233a1430' stroke-width='2' opacity='.8'/%3E%3Crect x='71' y='38' width='16' height='50' rx='2' fill='%239e1d57' stroke='%233a1430' stroke-width='2'/%3E%3Cpath d='M74 46h10M74 80h10' stroke='%23fff4e2' stroke-width='2' opacity='.8'/%3E%3Crect x='91' y='28' width='20' height='60' rx='2' fill='%237a3e1d' stroke='%233a1430' stroke-width='2'/%3E%3Cpath d='M94 36h14M94 80h14' stroke='%23fff4e2' stroke-width='2' opacity='.8'/%3E%3Crect x='115' y='48' width='12' height='40' rx='2' fill='%23e2621d' stroke='%233a1430' stroke-width='2'/%3E%3Cpath d='M118 56h6M118 80h6' stroke='%23fff4e2' stroke-width='2' opacity='.8'/%3E%3Crect x='131' y='32' width='22' height='56' rx='2' fill='%23435c1f' stroke='%233a1430' stroke-width='2'/%3E%3Cpath d='M134 40h16M134 80h16' stroke='%23fff4e2' stroke-width='2' opacity='.8'/%3E%3Crect x='157' y='26' width='16' height='62' rx='2' fill='%23fff4e2' stroke='%233a1430' stroke-width='2'/%3E%3Cpath d='M160 34h10M160 80h10' stroke='%233a1430' stroke-width='2' opacity='.8'/%3E%3Crect x='177' y='40' width='20' height='48' rx='2' fill='%23b3361c' stroke='%233a1430' stroke-width='2'/%3E%3Cpath d='M180 48h14M180 80h14' stroke='%23fff4e2' stroke-width='2' opacity='.8'/%3E%3Crect x='201' y='30' width='14' height='58' rx='2' fill='%23e8a61c' stroke='%233a1430' stroke-width='2'/%3E%3Cpath d='M204 38h8M204 80h8' stroke='%23fff4e2' stroke-width='2' opacity='.8'/%3E%3Crect x='219' y='36' width='18' height='52' rx='2' fill='%239e1d57' stroke='%233a1430' stroke-width='2'/%3E%3Cpath d='M222 44h12M222 80h12' stroke='%23fff4e2' stroke-width='2' opacity='.8'/%3E%3Crect x='238' y='40' width='16' height='48' rx='2' fill='%23e2621d' stroke='%233a1430' stroke-width='2' transform='rotate(14 238 88)'/%3E%3Crect x='0' y='88' width='260' height='8' fill='%233a1430'/%3E%3C/svg%3E");
+  --pattern-size: 260px 96px;
   --num-bg: var(--moss);
   --tilt: -1.5deg;
 }
 
-/* 04 Contact — berry with falling golden leaves */
+/* 04 Contact — fountain-pen nibs and ink drops */
 .bar-contact {
   --bar-bg: var(--berry);
-  --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='110' height='90' viewBox='0 0 110 90'%3E%3Cg transform='translate(14 10) rotate(-30 12 12)'%3E%3Cpath fill='%23e8a61c' d='M3 21C3 9 9 3 21 3c0 12-6 18-18 18z'/%3E%3Cpath d='M3 21 15 9' stroke='%239e1d57' stroke-width='1.5'/%3E%3C/g%3E%3Cg transform='translate(68 46) rotate(40 12 12) scale(.9)'%3E%3Cpath fill='%23e2621d' d='M3 21C3 9 9 3 21 3c0 12-6 18-18 18z'/%3E%3Cpath d='M3 21 15 9' stroke='%239e1d57' stroke-width='1.5'/%3E%3C/g%3E%3Ccircle cx='86' cy='16' r='3' fill='%23fff4e2'/%3E%3Ccircle cx='36' cy='72' r='2.5' fill='%23f3b73a'/%3E%3C/svg%3E");
-  --pattern-size: 198px 162px;
+  --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='210' height='110' viewBox='0 0 210 110'%3E%3Cg transform='translate(14 4) rotate(-24 12 14) scale(1.6)' stroke='%233a1430' stroke-width='1.5' stroke-linejoin='round'%3E%3Cpath fill='%23e8a61c' d='M12 2 20 10 12 26 4 10z'/%3E%3Cpath d='M12 14v12' stroke-width='1.2'/%3E%3Ccircle cx='12' cy='13' r='2' fill='%233a1430' stroke='none'/%3E%3C/g%3E%3Cg transform='translate(124 50) rotate(22 12 14) scale(1.35)' stroke='%233a1430' stroke-width='1.5' stroke-linejoin='round'%3E%3Cpath fill='%23e8a61c' d='M12 2 20 10 12 26 4 10z'/%3E%3Cpath d='M12 14v12' stroke-width='1.2'/%3E%3Ccircle cx='12' cy='13' r='2' fill='%233a1430' stroke='none'/%3E%3C/g%3E%3Cpath transform='translate(128 8) scale(1.3)' fill='%23fff4e2' d='M8 0C8 0 2 7 2 11a6 6 0 0 0 12 0C14 7 8 0 8 0z'/%3E%3Cpath transform='translate(44 74) scale(1)' fill='%23f3b73a' d='M8 0C8 0 2 7 2 11a6 6 0 0 0 12 0C14 7 8 0 8 0z'/%3E%3Ccircle cx='96' cy='52' r='3' fill='%23fff4e2'/%3E%3C/svg%3E");
+  --pattern-size: 210px 110px;
   --num-bg: var(--berry);
   --tilt: 1.5deg;
 }
@@ -547,6 +533,7 @@ img { max-width: 100%; height: auto; display: block; }
   .logo { padding: 1.25rem .5rem 1.5rem; }
   .logo-name { font-size: 13.5vw; letter-spacing: 0; }
   .d-a { width: 30px; top: 2%; left: 4%; }
+  .d-fox { width: 42px; top: 0; left: 2%; }
   .d-pen { width: 96px; top: 10%; right: -1%; }
   .d-b, .d-c, .d-book { display: none; }
   .site-header.compact .d-pen { display: none; }
