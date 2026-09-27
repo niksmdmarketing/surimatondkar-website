@@ -128,18 +128,18 @@ img { max-width: 100%; height: auto; display: block; }
 .l:nth-child(5n+4) { --c: var(--berry);   --r: .8deg; }
 .l:nth-child(5n+5) { --c: var(--rust);    --r: -.6deg; }
 
-/* the fox curled up inside the O */
+/* a sleepy little acorn tucked inside the O */
 .l-o { position: relative; }
-.o-fox {
+.o-acorn {
   position: absolute;
-  left: 50%; top: 54%;
-  width: .44em;
-  transform: translate(-50%, -50%) rotate(-6deg);
-  transform-origin: 50% 80%;
+  left: 50%; top: 53%;
+  width: .32em;
+  transform: translate(-50%, -50%) rotate(-8deg);
+  transform-origin: 50% 90%;
   overflow: visible;
   transition: transform .35s cubic-bezier(.3, 1.8, .5, 1);
 }
-.logo:hover .o-fox { transform: translate(-50%, -58%) rotate(8deg) scale(1.08); }
+.logo:hover .o-acorn { transform: translate(-50%, -54%) rotate(8deg); }
 
 .logo-tag {
   display: inline-block;
