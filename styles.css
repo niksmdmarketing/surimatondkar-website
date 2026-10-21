@@ -536,3 +536,21 @@ img { max-width: 100%; height: auto; display: block; }
   .d-b, .d-c, .d-book { display: none; }
   .site-header.compact .d-pen { display: none; }
 }
+
+/* links inside award / publication lists */
+.list a {
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--accent, var(--pumpkin));
+  text-decoration-thickness: 3px;
+  text-underline-offset: 3px;
+  transition: background-color .2s ease, text-decoration-color .2s ease;
+}
+.list a:hover, .list a:focus-visible {
+  background: var(--accent, var(--pumpkin));
+  color: var(--accent-text, var(--cream));
+  text-decoration-color: transparent;
+  border-radius: 3px;
+  outline: none;
+}
