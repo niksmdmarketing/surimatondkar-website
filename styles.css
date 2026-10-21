@@ -180,7 +180,8 @@ img { max-width: 100%; height: auto; display: block; }
 
 .intro {
   display: grid;
-  grid-template-columns: minmax(0, 380px) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 420px);
+  justify-content: center;
   gap: clamp(1.5rem, 5vw, 4rem);
   align-items: center;
   margin: 2rem auto 3.5rem;
@@ -191,7 +192,7 @@ img { max-width: 100%; height: auto; display: block; }
   margin: 0;
   justify-self: center;
   width: 100%;
-  max-width: 380px;
+  max-width: 420px;
 }
 .portrait::before {
   content: "";
