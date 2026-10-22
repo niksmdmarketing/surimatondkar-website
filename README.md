@@ -6,13 +6,16 @@ Author website for Suri Matondkar. Plain HTML + CSS, no build step, hosted on Gi
 
 | File | What it is |
 | --- | --- |
-| `index.html` | Home: logo, photo + intro, and the four navigation bars |
-| `about.html` | About |
-| `awards.html` | Awards and shortlists |
-| `work.html` | Work: publications |
-| `contact.html` | Email + LinkedIn |
-| `styles.css` | All styling — colours are at the top under `:root` |
+| `index.html` | Home: logo, photo and the four navigation bars |
+| `about/index.html` | About (served at `/about/`) |
+| `awards/index.html` | Awards and shortlists (`/awards/`) |
+| `work/index.html` | Work: publications (`/work/`) |
+| `contact/index.html` | Contact (`/contact/`) |
+| `styles.css` | All styling; colours are at the top under `:root` |
 | `images/` | Photos |
+| `404.html` | The "page not found" page |
+| `sitemap.xml`, `robots.txt` | For search engines |
+| `about.html`, `awards.html`, `work.html`, `contact.html`, `interests/`, `2024/` | Small redirect pages so old links keep working (GitHub Pages can't do real 301 redirects) |
 | `CNAME` | Tells GitHub Pages to serve the site at surimatondkar.com |
 
 To edit text, open the page's `.html` file and change the words between the tags. The header (logo + Instagram link) is repeated in each page, so change the Instagram link in all five files.
