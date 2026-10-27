@@ -92,7 +92,7 @@ img { max-width: 100%; height: auto; display: block; }
   width: fit-content;
   max-width: 100%;
   margin: 0 auto;
-  padding: 1.5rem 2.5rem 2rem;
+  padding: 1.5rem 2.5rem .25rem;
   text-decoration: none;
   text-align: center;
 }
@@ -155,7 +155,7 @@ img { max-width: 100%; height: auto; display: block; }
 .d-c    { width: 30px; top: 10%; left: 22%; color: var(--mustard); animation: sway 4.6s ease-in-out infinite .3s; }
 .d-fox  { width: 60px; top: 0; left: 1%; animation: none; transform: rotate(-10deg); }
 .d-pen  { width: 170px; top: 0; right: 4%; }
-.d-book { width: 84px; bottom: 6%; left: -3%; transform: rotate(-8deg); }
+.d-book { width: 84px; bottom: 10%; left: -9%; transform: rotate(-8deg); }
 
 @keyframes sway {
   0%, 100% { transform: rotate(-10deg) translateY(0); }
@@ -184,7 +184,7 @@ img { max-width: 100%; height: auto; display: block; }
   justify-content: center;
   gap: clamp(1.5rem, 5vw, 4rem);
   align-items: center;
-  margin: 2rem auto 3.5rem;
+  margin: 1.25rem auto 3.5rem;
 }
 
 .portrait {
@@ -528,7 +528,7 @@ img { max-width: 100%; height: auto; display: block; }
   .tape-r { right: -26px; }
   .bars li { width: 100%; }
   .bar-label { box-shadow: 5px 5px 0 var(--ink); border-width: 3px; }
-  .logo { padding: 1.25rem .5rem 1.5rem; }
+  .logo { padding: 1.25rem .5rem .25rem; }
   .logo-name { font-size: 13.5vw; letter-spacing: 0; }
   .d-a { width: 30px; top: 2%; left: 4%; }
   .d-fox { width: 42px; top: 0; left: 2%; }
